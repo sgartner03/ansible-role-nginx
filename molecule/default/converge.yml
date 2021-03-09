@@ -4,7 +4,7 @@
 
   vars:
     nginx_use_ppa: true
-    nginx_remove_default_vhost: false
+    nginx_remove_default_vhost: true
     nginx_vhosts:
       - server_name: "pxe"
         root: "/var/www/pxe"
