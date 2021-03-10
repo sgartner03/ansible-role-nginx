@@ -15,7 +15,7 @@ name: CI
 
 defaults:
   run:
-    working-directory: ansible-role-nginx
+    working-directory: gepaplexx.nginx
 
 jobs:
   linter:
@@ -25,7 +25,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
-          path: ansible-role-nginx
+          path: gepaplexx.nginx
 
       - name: Do linting
         uses: github/super-linter@v3
@@ -48,7 +48,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
-          path: ansible-role-nginx
+          path: gepaplexx.nginx
 
       - name: Set up Python 3
         uses: actions/setup-python@v2

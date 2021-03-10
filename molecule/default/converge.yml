@@ -17,4 +17,4 @@
       changed_when: false
 
   roles:
-    - role: ansible-role-nginx
+    - role: gepaplexx.nginx
