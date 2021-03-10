@@ -27,7 +27,7 @@ jobs:
         with:
           path: gepaplexx.nginx
 
-      - name: Do linting
+      - name: Lint Code Base
         uses: github/super-linter@v3
         env:
           VALIDATE_ALL_CODEBASE: true
