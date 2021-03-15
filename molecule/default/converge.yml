@@ -1,14 +1,15 @@
 ---
 - name: Converge
-  hosts: all
+  hosts: instance
 
   vars:
     nginx_use_ppa: true
     nginx_remove_default_vhost: true
     nginx_vhosts:
       - server_name: "pxe"
-        root: "/var/www/pxe"
+        root: "/var/www/html"
         listen: "8080"
+        index: "index.html index.htm index.nginx-debian.html"
 
   pre_tasks:
     - name: Update apt cache.

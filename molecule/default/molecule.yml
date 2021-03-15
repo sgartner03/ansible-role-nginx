@@ -10,7 +10,20 @@ platforms:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup
     privileged: true
+    networks:
+      - name: nginx_molecule
     pre_build_image: true
+
+  - name: verify
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2004}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup
+    privileged: true
+    networks:
+      - name: nginx_molecule
+    pre_build_image: true
+
 provisioner:
   name: ansible
   playbooks:

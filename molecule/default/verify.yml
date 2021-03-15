@@ -1,6 +1,6 @@
 ---
 - name: Verify
-  hosts: all
+  hosts: instance
   tasks:
   - name: Populate service facts
     service_facts:
@@ -14,6 +14,7 @@
         
   - name: Check if port 8080 is open
     wait_for:
+      host: 0.0.0.0
       port: "8080"
       state: started
       delay: 0
@@ -21,8 +22,22 @@
 
   - name: Check if port 80 is closed
     wait_for:
+      host: 0.0.0.0
       port: "80"
       state: stopped
       delay: 0
       timeout: 10
+
+- name: External Verification
+  hosts: verify
+  gather_facts: no
+  tasks:
+    - name: Update Cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Check that you can connect (GET) to a page and it returns a status 200
+      uri:
+        url: http://instance:8080
 ...
