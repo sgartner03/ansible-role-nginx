@@ -1,6 +1,7 @@
 # Ansible Role: Nginx
 
-[![CI](https://github.com/geerlingguy/ansible-role-nginx/workflows/CI/badge.svg?event=push)](https://github.com/geerlingguy/ansible-role-nginx/actions?query=workflow%3ACI)
+![gplv3](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
+![Maintenance](https://img.shields.io/maintenance/yes/2022?style=flat-square)
 
 **Note:** Please consider using the official [NGINX Ansible role](https://github.com/nginxinc/ansible-role-nginx) from NGINX, Inc.
 
@@ -239,3 +240,7 @@ MIT / BSD
 ## Author Information
 
 This role was created in 2014 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
+
+Contributions by:
+
+- [@ckaserer](https://github.com/ckaserer)
