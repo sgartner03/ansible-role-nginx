@@ -1,6 +1,6 @@
 # Ansible Role: Nginx
 
-![gplv3](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
+![gplv3](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square) 
 ![Maintenance](https://img.shields.io/maintenance/yes/2022?style=flat-square)
 
 **Note:** Please consider using the official [NGINX Ansible role](https://github.com/nginxinc/ansible-role-nginx) from NGINX, Inc.
