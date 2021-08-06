@@ -43,4 +43,5 @@ galaxy_info:
     - proxy
     - load
     - balancer
+    - loadbalancer
 ...
