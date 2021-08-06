@@ -9,3 +9,4 @@
     path: /var/log/nginx
     state: directory
     mode: 0755
+...

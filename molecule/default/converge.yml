@@ -1,7 +1,6 @@
 ---
 - name: Converge
   hosts: instance
-
   vars:
     nginx_use_ppa: true
     nginx_remove_default_vhost: true
@@ -10,12 +9,11 @@
         root: "/var/www/html"
         listen: "8080"
         index: "index.html index.htm index.nginx-debian.html"
-
   pre_tasks:
     - name: Update apt cache.
       apt: update_cache=yes cache_valid_time=600
       when: ansible_os_family == 'Debian'
       changed_when: false
-
   roles:
     - role: ckaserer.nginx
+...

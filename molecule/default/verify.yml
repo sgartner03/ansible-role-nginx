@@ -4,14 +4,12 @@
   tasks:
   - name: Populate service facts
     service_facts:
-
   - name: Assert that nginx.service is installed, enabled and running
     assert:
       that:
         - "'nginx.service' in ansible_facts.services"
         - "ansible_facts.services['nginx.service'].status == 'enabled'"
-        - "ansible_facts.services['nginx.service'].state == 'running'"
-        
+        - "ansible_facts.services['nginx.service'].state == 'running'" 
   - name: Check if port 8080 is open
     wait_for:
       host: 0.0.0.0
@@ -19,7 +17,6 @@
       state: started
       delay: 0
       timeout: 3
-
   - name: Check if port 80 is closed
     wait_for:
       host: 0.0.0.0
@@ -36,7 +33,6 @@
       apt:
         update_cache: yes
         cache_valid_time: 3600
-
     - name: Check that you can connect (GET) to a page and it returns a status 200
       uri:
         url: http://instance:8080
