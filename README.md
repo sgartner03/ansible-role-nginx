@@ -17,6 +17,11 @@ None.
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
+
+    nginx_listen_ipv6: true
+
+Whether or not to listen on IPv6 (applied to all vhosts managed by this role).
+
     nginx_vhosts: []
 
 A list of vhost definitions (server blocks) for Nginx virtual hosts. Each entry will create a separate config file named by `server_name`. If left empty, you will need to supply your own virtual host configuration. See the commented example in `defaults/main.yml` for available server options. If you have a large number of customizations required for your server definition(s), you're likely better off managing the vhost configuration file yourself, leaving this variable set to `[]`.

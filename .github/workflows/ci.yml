@@ -22,6 +22,17 @@ jobs:
           VALIDATE_ALL_CODEBASE: true
           FILTER_REGEX_EXCLUDE: '.*.md'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up Python 3.
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install test dependencies.
+        run: pip3 install yamllint
+
+      - name: Lint code.
+        run: |
+          yamllint .
 
   molecule:
     name: Molecule
@@ -29,6 +40,7 @@ jobs:
     strategy:
       matrix:
         distro:
+          - rockylinux8
           - ubuntu2004
           - debian10
           - centos7
