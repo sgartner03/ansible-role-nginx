@@ -29,7 +29,7 @@ loop_var_prefix: "nginx_"
 # Enforce variable names to follow pattern below, in addition to Ansible own
 # requirements, like avoiding python identifiers. To disable add `var-naming`
 # to skip_list.
-var_naming_pattern: "^[_]*nginx_[a-z][a-z0-9_]*$"
+# var_naming_pattern: "^[_]*nginx_[a-z][a-z0-9_]*$"
 
 use_default_rules: true
 

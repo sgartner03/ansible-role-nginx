@@ -3,22 +3,22 @@
   hosts: instance
   tasks:
   - name: Populate service facts
-    service_facts:
+    ansible.builtin.service_facts:
   - name: Assert that nginx.service is installed, enabled and running
-    assert:
+    ansible.builtin.assert:
       that:
         - "'nginx.service' in ansible_facts.services"
         - "ansible_facts.services['nginx.service'].status == 'enabled'"
         - "ansible_facts.services['nginx.service'].state == 'running'"
   - name: Check if port 8080 is open
-    wait_for:
+    ansible.builtin.wait_for:
       host: 0.0.0.0
       port: "8080"
       state: started
       delay: 0
       timeout: 3
   - name: Check if port 80 is closed
-    wait_for:
+    ansible.builtin.wait_for:
       host: 0.0.0.0
       port: "80"
       state: stopped
@@ -30,6 +30,6 @@
   gather_facts: false
   tasks:
     - name: Check that nginx works
-      uri:
+      ansible.builtin.uri:
         url: http://instance:8080
 ...
