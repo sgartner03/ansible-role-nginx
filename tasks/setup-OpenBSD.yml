@@ -1,6 +1,6 @@
 ---
 - name: Ensure nginx is installed.
-  ansible.builtin.openbsd_pkg:
+  community.general.openbsd_pkg:
     name: "{{ nginx_package_name }}"
     state: present
 

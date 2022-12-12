@@ -6,7 +6,7 @@
   tags: ['skip_ansible_lint']
 
 - name: Ensure nginx is installed.
-  ansible.builtin.pkgng:
+  community.general.pkgng:
     name: "{{ nginx_package_name }}"
     state: present
 
