@@ -2,15 +2,15 @@
 - name: Prepare
   hosts: instance
   tasks:
-  - name: create test directory
-    ansible.builtin.file:
-      path: /var/www/html
-      state: directory
-      mode: '0755'
-      recurse: true
-  - name: create test file
-    ansible.builtin.file:
-      path: /var/www/html/index.html
-      state: touch
-      mode: '0755'
+    - name: create test directory
+      ansible.builtin.file:
+        path: /var/www/html
+        state: directory
+        mode: '0755'
+        recurse: true
+    - name: create test file
+      ansible.builtin.file:
+        path: /var/www/html/index.html
+        state: touch
+        mode: '0755'
 ...
