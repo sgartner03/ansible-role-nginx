@@ -249,3 +249,4 @@ This role was created in 2014 by [Jeff Geerling](https://www.jeffgeerling.com/),
 Contributions by:
 
 - [@ckaserer](https://github.com/ckaserer)
+- [@fhochleitner](https://github.com/fhochleitner)
