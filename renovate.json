@@ -3,6 +3,6 @@
   "extends": [
     "config:base"
   ],
-  "prHourlyLimit": 0,
-  "includeForks": true
+  "includeForks": true,
+  "prHourlyLimit": 0
 }
