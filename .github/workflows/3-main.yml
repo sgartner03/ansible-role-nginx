@@ -118,10 +118,21 @@ jobs:
           tag: ${{ steps.autotag.outputs.new-tag }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: galaxy
-        uses: robertdebock/galaxy-action@1.2.1
+      - name: Set up Python 3
+        uses: actions/setup-python@v4
         with:
-          galaxy_api_key: ${{ secrets.GALAXY_API_KEY }}
+          python-version: 3.x
+
+      - name: Install ansible-base
+        run: pip3 install ansible-base
+
+      - name: Trigger a new import on Galaxy
+        run: >-
+          ansible-galaxy role import
+          --token "${{ secrets.GALAXY_API_KEY }}"
+          --branch main
+          "$(echo ${{ github.repository }} | cut -d/ -f1)"
+          "$(echo ${{ github.repository }} | cut -d/ -f2)"
 
   playbook:
     name: Trigger Playbook Repo
