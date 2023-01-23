@@ -131,6 +131,7 @@ jobs:
           ansible-galaxy role import
           --token "${{ secrets.GALAXY_API_KEY }}"
           --branch main
+          - vvvv
           "$(echo ${{ github.repository }} | cut -d/ -f1)"
           "$(echo ${{ github.repository }} | cut -d/ -f2)"
 
