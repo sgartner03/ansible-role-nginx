@@ -126,7 +126,6 @@ jobs:
       - name: Install ansible-base
         run: pip3 install ansible-base
 
-
       - name: Trigger a new import on Galaxy
         run: >-
           ansible-galaxy role import
