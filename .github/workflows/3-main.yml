@@ -118,10 +118,11 @@ jobs:
           tag: ${{ steps.autotag.outputs.new-tag }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Release Ansible Role to Galaxy
-        uses: hspaans/ansible-galaxy-action@v1.0.5
+      - name: galaxy
+        uses: robertdebock/galaxy-action@1.2.1
         with:
-          api_key: ${{ secrets.GALAXY_API_KEY }}
+          galaxy_api_key: ${{ secrets.GALAXY_API_KEY }}
+          path: gepaplexx.nginx
 
   playbook:
     name: Trigger Playbook Repo
