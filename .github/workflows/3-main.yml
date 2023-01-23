@@ -126,11 +126,15 @@ jobs:
       - name: Install ansible-base
         run: pip3 install ansible-base
 
+      - name: Debug
+        run: ip a
+
       - name: Trigger a new import on Galaxy
         run: >-
           ansible-galaxy role import
           --token "${{ secrets.GALAXY_API_KEY }}"
           --branch main
+          -vvvvvvv
           "$(echo ${{ github.repository }} | cut -d/ -f1)"
           "$(echo ${{ github.repository }} | cut -d/ -f2)"
 
